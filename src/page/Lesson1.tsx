@@ -3,13 +3,26 @@ import { useRef } from "react";
 
 const Lesson1 = () => {
   const parent = {
-    hidden: { opacity: 0, scale: 0.9 },
+    hidden: { x: 0, y: 0, opacity: 0 },
     visible: {
-      opacity: 0.6,
-      scale: 1,
+      x: [0, 300, -300, 0],
+      y: [0, 300, -300, 0],
+      rotate: [0, 300, -300, 0],
+
+      opacity: 1,
       transition: {
-        ease: "easeInOut",
-        duration: 0.5,
+        duration: 5,
+
+        repeat: Infinity,
+        ease: "linear",
+        opacity: {
+          duration: 0.5,
+        },
+
+        rotate: {
+          delay: 1,
+          repeat: Infinity,
+        },
       },
     },
 
