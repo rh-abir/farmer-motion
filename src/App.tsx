@@ -1,9 +1,10 @@
 import "./App.css";
+import Lesson1 from "./page/Lesson1";
 
 const App = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">This is react app</h1>
+    <div className="w-full h-screen flex justify-center items-center">
+      <Lesson1 />
     </div>
   );
 };
