@@ -1,17 +1,50 @@
 import { motion } from "framer-motion";
 
 const Lesson1 = () => {
-  const initla = { rotate: 0 };
-  const animate = { rotate: 360 };
+  const parent = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
+  const child = {
+    hidden: { opacity: 0, scale: 0.1 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        ease: "easeInOut",
+        duration: 1.5,
+        delayChildren: 0.5,
+        staggerChildren: 0.5,
+      },
+    },
+  };
 
   return (
     <div>
       <motion.div
-        className="size-64 bg-indigo-500 rounded-lg"
-        initial={initla}
-        animate={animate}
-        transition={{ duration: 2 }}
-      ></motion.div>
+        className="size-64 bg-indigo-500 rounded-lg flex flex-wrap gap-5 p-5 justify-center items-center"
+        variants={parent}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div
+          variants={child}
+          className="bg-cyan-400 size-20 rounded-sm"
+        ></motion.div>
+        <motion.div
+          variants={child}
+          className="bg-cyan-400 size-20 rounded-sm"
+        ></motion.div>
+        <motion.div
+          variants={child}
+          className="bg-cyan-400 size-20 rounded-sm"
+        ></motion.div>
+        <motion.div
+          variants={child}
+          className="bg-cyan-400 size-20 rounded-sm"
+        ></motion.div>
+      </motion.div>
     </div>
   );
 };
