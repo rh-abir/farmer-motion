@@ -3,22 +3,30 @@ import { motion } from "framer-motion";
 const Lesson1 = () => {
   const parent = {
     hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1 },
-  };
-
-  const child = {
-    hidden: { opacity: 0, scale: 0.1 },
     visible: {
       opacity: 1,
       scale: 1,
       transition: {
         ease: "easeInOut",
-        duration: 1.5,
-        delayChildren: 0.5,
-        staggerChildren: 0.5,
+        duration: 2,
       },
     },
+
+    hover: { scale: 1.1, transition: { duration: 1 } },
+    click: { scale: 1, rotate: 45 },
   };
+
+  //   const child = {
+  //     hidden: { opacity: 0, scale: 0.1 },
+  //     visible: {
+  //       opacity: 1,
+  //       scale: 1,
+  //       transition: {
+  //         ease: "easeInOut",
+  //         duration: 5,
+  //       },
+  //     },
+  //   };
 
   return (
     <div>
@@ -27,8 +35,12 @@ const Lesson1 = () => {
         variants={parent}
         initial="hidden"
         animate="visible"
+        whileHover="hover"
+        whileTap="click"
+        onHoverStart={() => console.log("hover start")}
+        onHoverEnd={() => console.log("hover end")}
       >
-        <motion.div
+        {/* <motion.div
           variants={child}
           className="bg-cyan-400 size-20 rounded-sm"
         ></motion.div>
@@ -43,7 +55,7 @@ const Lesson1 = () => {
         <motion.div
           variants={child}
           className="bg-cyan-400 size-20 rounded-sm"
-        ></motion.div>
+        ></motion.div> */}
       </motion.div>
     </div>
   );
