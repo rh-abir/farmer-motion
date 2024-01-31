@@ -1,11 +1,11 @@
 import "./App.css";
-import Lesson7 from "./page/lesson7";
+import Lessson8 from "./page/Lessson8";
 
 const App = () => {
   return (
-    <div className="w-full h-screen  flex flex-col justify-center items-center">
-      {/* <div className="h-[200vh] w-full bg-red-500"></div> */}
-      <Lesson7 />
+    <div className="w-full   flex flex-col justify-center items-center">
+      <div className="h-[800vh] w-full bg-red-500"></div>
+      <Lessson8 />
     </div>
   );
 };
